@@ -12,9 +12,7 @@ app.use(express.json())
 app.use(cors());
 app.use(helmet());
 // image upload
-app.use('/',(req,res)=>{
-    res.send("server is runsning")
-})
+
 // Routes
 app.use('/auth',authrouter)
 app.use('/',menurouter)
