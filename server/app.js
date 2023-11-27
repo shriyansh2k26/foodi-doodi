@@ -23,7 +23,7 @@ useNewUrlParser:true,
 useUnifiedTopology:true
 })
 .then(()=>{
-    console.log("connected to dataabase")
+    console.log("connected too dataabase")
     app.listen(7878,()=>{
         console.log("listening to 7878")
     })
