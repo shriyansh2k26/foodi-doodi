@@ -7,34 +7,27 @@ import jwt from 'jsonwebtoken'
  authrouter.post('/register',async(req,res)=>{
     try {
         const {name,email ,phone ,password}=req.body;
-        
-       if(!phone||!name||!email||!password){
-        return res.json({
-            message:"error in filling",
-            success:false
-        })
-       }
-       else if(!(phone===10)){
-        return res.json({
-            message:"error in no. n"
-            ,success:false
-        })
-       }
-       else{
-        const hashPassword=await bcrypt.hash(password,11);
-        const newUser= await user.create({
-           name:name,
-           email:email,
-           phone:phone,
-           password:hashPassword
-           })
-          
-          return  res.json({
-                    message:"User created successfully",
-                    success:true
-                })
-       }
-        
+        console.log(req.body)
+        // const check=await user.findOne({email:email});
+        // if(check){
+        //     return res.status(500).json({
+        //         message:"email already exist",
+        //         success:false
+        //     })
+        // }
+          const hashPassword=await bcrypt.hash(password,11);
+         const newUser= await user.create({
+            name:name,
+            email:email,
+            phone:phone,
+            password:hashPassword
+            })
+           
+             res.json({
+                     message:"User created successfully",
+                     success:true
+                 })
+
       
     } catch (error) {
         res.status(500).json({error:error.message,
