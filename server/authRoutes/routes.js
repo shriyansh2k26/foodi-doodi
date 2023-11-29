@@ -15,6 +15,12 @@ import jwt from 'jsonwebtoken'
         //         success:false
         //     })
         // }
+        if(!name||!phone||!email||!password){
+            return res.json({
+                message:"fill all details",
+                success:false
+            })
+        }
           const hashPassword=await bcrypt.hash(password,11);
          const newUser= await user.create({
             name:name,
