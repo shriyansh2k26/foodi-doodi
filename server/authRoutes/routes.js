@@ -16,7 +16,7 @@ import jwt from 'jsonwebtoken'
        }
        else if(!(phone===10)){
         return res.json({
-            message:"error in no."
+            message:"error in no. n"
             ,success:false
         })
        }
