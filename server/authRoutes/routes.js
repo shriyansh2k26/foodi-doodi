@@ -10,7 +10,7 @@ import jwt from 'jsonwebtoken'
         
        if(!(phone===10)||!name||!email||!password){
         return res.json({
-            message:"error in datails",
+            message:"error in details",
             success:false
         })
        }
