@@ -11,7 +11,7 @@ export default function Admin() {
   const [id, setId] = useState("")
   const handleAddMenu = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:7878/addmenu', {
+    const response = await fetch('https://foodservers.onrender.com/addmenu', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

@@ -64,7 +64,7 @@ export default function Menu() {
       });
     }
     else{
-      const response = await fetch("http://localhost:7878/orders", {
+      const response = await fetch("https://foodservers.onrender.com/orders", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -122,7 +122,7 @@ export default function Menu() {
       </div>
       <div className="menuDisplay">
         <div>
-          <h4 className='section'>Best food for you</h4>
+          <h4 className='section'>Best foodsfor you</h4>
           <h5 className='section1' onClick={() => { setMenu(menu) }}>All Menu</h5>
         </div>
         <div className="menuItem flex sp-even ">

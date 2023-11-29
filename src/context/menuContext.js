@@ -5,15 +5,15 @@ const MenuProvider=({children})=>{
     const [menu,setMenu]=useState([])
     useEffect(()=>{
         try {
-        const fetch_data=async()=>{
-            const Fetch_Menu=await fetch("http://localhost:7878/menu",{
+        const fetchdata=async()=>{
+            const Fetch_Menu=await fetch("https://foodservers.onrender.com/menu",{
                 method:"GET",
             });
             const data= await Fetch_Menu.json();
             setMenu(data.allmenu)
         }
-        fetch_data();
-        console.log(menu)
+        fetchdata();
+        // console.log(menu)
        } catch (error) {
         console.log(error)
        }

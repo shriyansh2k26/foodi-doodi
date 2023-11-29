@@ -11,7 +11,7 @@ export default function Orders() {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch("http://localhost:7878/fetchorder", {
+                const response = await fetch("https://foodservers.onrender.com/fetchorder", {
                     method: "GET",
                     headers: {
                         'Content-Type': 'application/json',
