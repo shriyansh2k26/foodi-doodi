@@ -8,10 +8,16 @@ import jwt from 'jsonwebtoken'
     try {
         const {name,email ,phone ,password}=req.body;
         
-       if(!(phone===10)||!name||!email||!password){
+       if(!phone||!name||!email||!password){
         return res.json({
-            message:"error in details",
+            message:"error in filling",
             success:false
+        })
+       }
+       else if(!(phone===10)){
+        return res.json({
+            message:"error in no."
+            ,success:false
         })
        }
        else{
